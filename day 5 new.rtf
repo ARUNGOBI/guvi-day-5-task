@@ -1,0 +1,209 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 QUESTION NO : 1 -  Do the below programs in anonymous function & IIFE\par
+\par
+1)Print odd numbers in an array\par
+anonymous  :  function(array)\{\par
+                  for(var i = 0 ; i< array.length ; i++)\{\par
+                        if(array[i]%2!=0)\{\par
+                           console.log(array[i])\par
+                        \} \par
+                   \}\par
+                \}\par
+IIFE :       (function(array)\{\par
+             for(var i = 0 ; i< array.length ; i++)\{\par
+                        if(array[i]%2!=0)\{\par
+                           console.log(array[i])\par
+                        \} \par
+                   \}\par
+             \})([1,2,3,4])\par
+             \par
+Arrow Function    oddNumbers = (array) => \{\par
+                   for(var i = 0 ; i< array.length ; i++)\{\par
+                        if(array[i]%2!=0)\{\par
+                           console.log(array[i])\par
+                        \} \par
+                   \}\par
+                        \}\par
+                        \par
+   2)Convert all the strings to title caps in a string array\par
+   \par
+ anonymous :   function (str) \{\par
+                    str = str.toLowerCase().split(' ');\par
+                    for (var i = 0; i < str.length; i++) \{\par
+                      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); \par
+                    \} \par
+                    return str.join(' ');\par
+                  \}\par
+IIFE : (function (str) \{\par
+                    str = str.toLowerCase().split(' ');\par
+                    for (var i = 0; i < str.length; i++) \{\par
+                      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); \par
+                    \} \par
+                    return str.join(' ');\par
+                  \})("MUDRA IS MY NAME");\par
+ Arrow Function : titleCase = (str) => \{\par
+                    str = str.toLowerCase().split(' ');\par
+                    for (var i = 0; i < str.length; i++) \{\par
+                      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); \par
+                    \} \par
+                    return str.join(' ');\par
+                  \}            \par
+3)Sum of all numbers in an array \par
+anonymous  :  function(array)\{\par
+                  var sum = 0;\par
+                  for(var i = 0 ; i< array.length ; i++)\{\par
+                     sum = sum + array[i];\par
+                   \}\par
+                   return sum;\par
+                \}\par
+IIFE :       (function(array)\{\par
+             var sum = 0;\par
+                  for(var i = 0 ; i< array.length ; i++)\{\par
+                     sum = sum + array[i];\par
+                   \}\par
+                   return sum;\par
+             \})([1,2,3,4])\par
+Arrow:       sum = (array)=>\{\par
+             var sum = 0;\par
+                  for(var i = 0 ; i< array.length ; i++)\{\par
+                     sum = sum + array[i];\par
+                   \}\par
+                   return sum;\par
+                   \}\par
+4)Return all the prime numbers in an array\par
+    Anonymous Function:\par
+                 function(numArray)\{\par
+                      numArray = numArray.filter((number) => \{\par
+                        for (var i = 2; i <= Math.sqrt(number); i++) \{\par
+                          if (number % i === 0) return false;\par
+                        \}\par
+                        return true;\par
+                      \});\par
+                      console.log(numArray);\par
+                  \}\par
+   IIFE \par
+                   (  \par
+                   function(numArray)\{\par
+                      numArray = numArray.filter((number) => \{\par
+                        for (var i = 2; i <= Math.sqrt(number); i++) \{\par
+                          if (number % i === 0) return false;\par
+                        \}\par
+                        return true;\par
+                      \});\par
+                      console.log(numArray);\par
+                  \})([1,2,3,4])\par
+    Arrow Function :\par
+    \par
+       primeNumber = (numArray) => \{\par
+                      numArray = numArray.filter((number) => \{\par
+                        for (var i = 2; i <= Math.sqrt(number); i++) \{\par
+                          if (number % i === 0) return false;\par
+                        \}\par
+                        return true;\par
+                      \});\par
+                      console.log(numArray);\par
+                  \}\par
+                  \par
+5)  Return all the palindromes in an array\par
+\par
+function isPalindrome(N)\par
+    \{\par
+        let str = "" + N;\par
+        let len = str.length;\par
+        for (let i = 0; i < parseInt(len / 2, 10); i++)\par
+        \{\par
+            if (str[i] != str[len - 1 - i ])\par
+                return false;\par
+        \}\par
+        return true;\par
+    \}\par
+    \par
+  Anonymous Function :  function (arr, n)\par
+    \{\par
+        // Traversing each element of the array\par
+        // and check if it is palindrome or not\par
+        for (let i = 0; i < n; i++)\par
+        \{\par
+            let ans = isPalindrome(arr[i]);\par
+            if (ans == false)\par
+                return false;\par
+        \}\par
+        return true;\par
+    \}\par
+    \par
+    IIFE : \par
+\par
+              (  function (arr, n)\par
+        \{\par
+            // Traversing each element of the array\par
+            // and check if it is palindrome or not\par
+            for (let i = 0; i < n; i++)\par
+            \{\par
+                let ans = isPalindrome(arr[i]);\par
+                if (ans == false)\par
+                    return false;\par
+            \}\par
+            return true;\par
+        \})([1,2,3] , 3)\par
+\par
+Arrow : \par
+Palindrome = (arr, n) =>\par
+    \{\par
+        // Traversing each element of the array\par
+        // and check if it is palindrome or not\par
+        for (let i = 0; i < n; i++)\par
+        \{\par
+            let ans = isPalindrome(arr[i]);\par
+            if (ans == false)\par
+                return false;\par
+        \}\par
+        return true;\par
+    \}\par
+Q.Return median of two sorted arrays of same size\par
+Q.Remove duplicates from an Array\par
+Anonymous Function : function(array)\{\par
+                        let dup = [...new Set(array)];\par
+                        console.log(dup);\par
+                      \}\par
+IIFE :                (function(array)\{\par
+                        let dup = [...new Set(array)];\par
+                        console.log(dup);\par
+                       \})([1,1,2,3,4])\par
+                       \par
+\par
+Q.Rotate an array by K times\par
+\par
+function reverse(array , li , ri)\{\par
+ while(li < ri)\{\par
+      int temp = a[li];\par
+      a[li]= a[ri];\par
+      a[ri] = temp;\par
+      \par
+      li++;\par
+      ri--;\par
+    \}\par
+\}\par
+Anonymous function : function(array , k)\{\par
+                          k = k % a.length;\par
+                            if(k < 0)\{\par
+                              k += a.length;\par
+                            \}\par
+\par
+                            reverse(a, 0, a.length - k - 1);\par
+                            reverse(a, a.length - k, a.length - 1);\par
+                            reverse(a, 0, a.length - 1);\par
+                          \}\par
+                          \par
+   IIFE :   (function(array , k)\{\par
+                          k = k % a.length;\par
+                            if(k < 0)\{\par
+                              k += a.length;\par
+                            \}\par
+\par
+                            reverse(a, 0, a.length - k - 1);\par
+                            reverse(a, a.length - k, a.length - 1);\par
+                            reverse(a, 0, a.length - 1);\par
+                          \})([1,2,3,4] , 2)\par
+}
+ 
